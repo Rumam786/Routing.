@@ -12,6 +12,8 @@
     <p>
         <router-link to="user/4">naeem</router-link>
     </p>
+        <router-link :to="{name:'user',params:{id:array.id}}">Ali</router-link><br><br>
+    <button v-on:click="hi">router</button>
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App" />
 
@@ -24,6 +26,18 @@ import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
     name: 'Home',
+    data() {
+        return {
+            array: [
+                {id:7}
+            ]
+        }
+    },
+    methods: {
+        hi() {
+            this.$router.push("/user/7")
+        }
+    },
     components: {
         HelloWorld
     }
